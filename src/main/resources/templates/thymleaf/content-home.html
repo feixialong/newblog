@@ -1,0 +1,26 @@
+<div class="am-u-md-8 am-u-sm-12">
+    <div th:each="blog:${Blogs}">
+        <article class="am-g blog-entry-article">
+            <div class="am-u-lg-6 am-u-md-12 am-u-sm-12 blog-entry-img">
+                <img src="/i/f10.jpg" alt="" class="am-u-sm-12">
+            </div>
+            <div class="am-u-lg-6 am-u-md-12 am-u-sm-12 blog-entry-text">
+                <h1><a th:href="@{/blog/{vid}(vid=${blog.Vid})}" th:text="${blog.Title}">我本楚狂人，凤歌笑孔丘</a></h1>
+                <span><a th:href="@{/categories/{categoriesName}(categoriesName=${blog.Categories})}" class="blog-color" th:text="${blog.Categories}">article &nbsp;</a></span>
+                <span th:text="${blog.Date}">2015/10/9</span>
+                <p th:utext="${blog.Abstracts}" >我们一直在坚持着，不是为了改变这个世界，而是希望不被这个世界所改变。</p>
+                <p><a th:href="@{/blog/{vid}(vid=${blog.Vid})}" class="blog-continue">阅读全文</a></p>
+                <span class="am-icon-tags"> &nbsp;</span>
+                <span th:each="tag:${#strings.arraySplit(blog.Tags,',')}" >
+                        <a th:href="@{/tags/{tag}(tag=${tag})}" th:text="${tag}">标签</a>
+                    </span>
+
+            </div>
+        </article>
+    </div>
+    <!-- 上一页，下一页 -->
+    <ul class="am-pagination">
+        <li class="am-pagination-prev"><a href="">&laquo; Prev</a></li>
+        <li class="am-pagination-next"><a href="">Next &raquo;</a></li>
+    </ul>
+</div>

@@ -1,0 +1,239 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Blog</title>
+    <div th:remove="all">
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="description" content="">
+        <meta name="keywords" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+        <meta name="renderer" content="webkit">
+        <meta http-equiv="Cache-Control" content="no-siteapp"/>
+        <link rel="icon" type="../static/image/png" href="../static/i/favicon.png">
+        <meta name="mobile-web-app-capable" content="yes">
+        <link rel="icon" sizes="192x192" href="../static/i/app-icon72x72@2x.png">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <meta name="apple-mobile-web-app-title" content="Amaze UI"/>
+        <link rel="apple-touch-icon-precomposed" href="../static/i/app-icon72x72@2x.png">
+        <meta name="msapplication-TileImage" content="../static/i/app-icon72x72@2x.png">
+        <meta name="msapplication-TileColor" content="#0e90d2">
+        <link rel="stylesheet" href="../static/css/amazeui.min.css">
+        <link rel="stylesheet" href="../static/css/app.css">
+    </div>
+    <div th:replace="thymleaf/head"></div>
+</head>
+
+<body id="blog">
+<header class="am-g am-g-fixed blog-fixed blog-text-center blog-header" th:remove="all">
+    <button class="am-topbar-btn am-topbar-toggle am-btn am-btn-sm am-btn-success am-show-sm-only blog-button" data-am-collapse="{target: '#blog-collapse'}" >
+        <span class="am-sr-only">导航切换</span> <span class="am-icon-bars"></span>
+    </button>
+    <div class="am-collapse am-topbar-collapse" id="blog-collapse">
+        <ul class="am-nav am-nav-pills am-topbar-nav">
+            <li><a href="index.html">主页</a></li>
+            <li><a href="categories.html">分类</a></li>
+            <li><a href="tags.html">标签</a></li>
+            <li><a href="archive.html">归档</a></li>
+            <li><a href="about.html">关于</a></li>
+            <li><a href="admin.html">后台管理</a></li>
+            <!--<li><a th:href="@{/image}">相册</a></li>-->
+        </ul>
+        <form class="am-topbar-form am-topbar-right am-form-inline" role="search">
+            <div class="am-form-group">
+                <input type="text" class="am-form-field am-input-sm" placeholder="搜索">
+            </div>
+        </form>
+
+    </div>
+</header>
+<div class="am-g am-g-fixed blog-fixed" th:remove="all">
+    <div class="am-u-md-8 am-u-sm-12 blog-sidebar">
+        <article class="am-article blog-article-p">
+            <!--标题-->
+            <div class="am-article-hd">
+                <h1 class="am-article-title blog-text-center">标题</h1>
+                <p class="am-article-meta blog-text-center">
+                    <span><a href="#" class="blog-color" >article &nbsp;</a></span>-
+                    <span><a href="#" >2015/10/9</a></span>
+                </p>
+            </div>
+            <!--正文-->
+            <div class="am-article-bd">
+                <h1>这是标题</h1>
+                <h2>这是标题</h2>
+                <h3>这是标题</h3>
+                <h4>这是标题</h4>
+                <h5>这是标题</h5>
+                <h1>HEADER ONE</h1>
+                <h2>HEADER ONE</h2>
+                <h3>HEADER ONE</h3>
+                <h4>HEADER ONE</h4>
+                <h5>HEADER ONE</h5>
+                <h1>表格:</h1>
+                <table class="am-table am-table-bordered">
+                    <thead>
+                    <tr>
+                        <th>网站名称</th>
+                        <th>网址</th>
+                        <th>创建时间</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>Amaze UI</td>
+                        <td>http://amazeui.org</td>
+                        <td>2012-10-01</td>
+                    </tr>
+                    <tr>
+                        <td>Amaze UI</td>
+                        <td>http://amazeui.org</td>
+                        <td>2012-10-01</td>
+                    </tr>
+                    <tr>
+                        <td>Amaze UI(Active)</td>
+                        <td>http://amazeui.org</td>
+                        <td>2012-10-01</td>
+                    </tr>
+                    <tr>
+                        <td>Amaze UI</td>
+                        <td>http://amazeui.org</td>
+                        <td>2012-10-01</td>
+                    </tr>
+                    <tr>
+                        <td>Amaze UI</td>
+                        <td>http://amazeui.org</td>
+                        <td>2012-10-01</td>
+                    </tr>
+                    </tbody>
+                </table>
+                <hr>
+                <h1>自定义列表:</h1>
+                <ul class="am-list am-list-border">
+                    <li><a href="#"><i class="am-icon-home am-icon-fw"></i>
+                        每个人都有一个死角， 自己走不出来，别人也闯不进去。</a></li>
+                    <li><a href="#"> <i class="am-icon-book am-icon-fw"></i>
+                        我把最深沉的秘密放在那里。</a></li>
+                    <li><a href="#"><i class="am-icon-pencil am-icon-fw"></i>你不懂我，我不怪你。</a></li>
+                </ul>
+                <h1>有序列表:</h1>
+                <ol><li>List item one<ol><li>List item one<ol><li>List item one</li><li>List item two</li><li>List item three</li><li>List item four</li></ol></li><li>List item two</li><li>List item three</li><li>List item four</li></ol></li><li>List item two</li><li>List item three</li><li>List item four</li></ol>
+                <h1>无序列表:</h1>
+                <ul><li>List item one<ul><li>List item one<ul><li>List item one</li><li>List item two</li><li>List item three</li><li>List item four</li></ul></li><li>List item two</li><li>List item three</li><li>List item four</li></ul></li><li>List item two</li><li>List item three</li><li>List item four</li></ul>
+                <h1>一大段文字：</h1>
+                <p>我遇见了你，你一直觉得自己不够美好，充满惊慌与卑微，但是，你即使那样害怕，却守在我的身后，不曾后退。人们总是崇拜英雄，惊喜与他们随时随地的光芒，但是最真实的事情永远是我们都会恐惧都会失败，有时受尽打击，又是无能为力。你说我是英雄，其实我不敢告诉你，如果不是你，你傻傻地倔强地站在那里，我一回头就能看见你，那么，或许，我早就做了命运的逃兵。<br><br>
+                    红衣佳人白衣友，朝与同歌暮同酒，世人谓我恋长安，其实只恋长安某。 ——殊同 <br>
+
+                    水银泻地的时候，忧愁穿过墙壁，又和着嘶哑的音乐，使我羞惭、灰心。整个夏季，仿佛一场，没有主题的游戏。 ——赵野 <br>
+
+                    我感到自己仿佛变得蔚蓝，变得无边无际，眼睛和指尖上，栖息着无数的星辰。 ——马林·索雷斯库 <br>
+
+                    手中的书页犹如薄薄的剃刀片白亮亮闪着寒光。在凌晨四时寂寞的时刻里，我可以听到孤独之根正一点点伸长的声音。 ——村上春树 <br>
+
+                    你的明眸是映现我灵魂颤动的湖，我那成群结队的梦想，为寻求解脱，而纷纷投入你这秋波深处。 ——波德莱尔  <br>
+
+                    当我们只剩下虚无，唯有沉默的太阳够好，是你的静寂，是无声的声音。 ——佩索阿
+                </p>
+            </div>
+            <!--标签-->
+            <div class="am-g blog-article-widget blog-article-margin">
+                <div class="am-u-lg-4 am-u-md-5 am-u-sm-7 am-u-sm-centered blog-text-center">
+                    <span class="am-icon-tags"> &nbsp;</span><a href="#">标签</a> , <a href="#">TAG</a> , <a href="#">啦啦</a>
+                    <hr>
+                    <a href=""><span class="am-icon-qq am-icon-fw am-primary blog-icon"></span></a>
+                    <a href=""><span class="am-icon-wechat am-icon-fw blog-icon"></span></a>
+                    <a href=""><span class="am-icon-weibo am-icon-fw blog-icon"></span></a>
+                </div>
+            </div>
+        </article>
+        <hr>
+        <ul class="am-pagination blog-article-margin">
+            <li class="am-pagination-prev"><a href="#" class="">&laquo; 一切的回顾</a></li>
+            <li class="am-pagination-next"><a href="">不远的未来 &raquo;</a></li>
+        </ul>
+    </div>
+    <div class="am-u-md-4 am-u-sm-12 blog-sidebar">
+        <div class="blog-sidebar-widget blog-bor">
+            <h2 class="blog-text-center blog-title"><span>About ME</span></h2>
+            <img src="../static/i/f14.jpg" alt="about me" class="blog-entry-img" >
+            <p>妹纸</p>
+            <p>
+                我是妹子UI，中国首个开源 HTML5 跨屏前端框架
+            </p><p>我不想成为一个庸俗的人。十年百年后，当我们死去，质疑我们的人同样死去，后人看到的是裹足不前、原地打转的你，还是一直奔跑、走到远方的我？</p>
+        </div>
+        <div class="blog-sidebar-widget blog-bor">
+            <h2 class="blog-text-center blog-title"><span>Contact ME</span></h2>
+            <p>
+                <a href=""><span class="am-icon-qq am-icon-fw am-primary blog-icon"></span></a>
+                <a href=""><span class="am-icon-github am-icon-fw blog-icon"></span></a>
+                <a href=""><span class="am-icon-weibo am-icon-fw blog-icon"></span></a>
+                <a href=""><span class="am-icon-reddit am-icon-fw blog-icon"></span></a>
+                <a href=""><span class="am-icon-weixin am-icon-fw blog-icon"></span></a>
+            </p>
+        </div>
+        <div class="blog-clear-margin blog-sidebar-widget blog-bor am-g ">
+            <h2 class="blog-title"><span>TAG cloud</span></h2>
+            <div class="am-u-sm-12 blog-clear-padding">
+                <a href="" class="blog-tag">amaze</a>
+                <a href="" class="blog-tag">妹纸 UI</a>
+                <a href="" class="blog-tag">HTML5</a>
+                <a href="" class="blog-tag">这是标签</a>
+                <a href="" class="blog-tag">Impossible</a>
+                <a href="" class="blog-tag">开源前端框架</a>
+            </div>
+        </div>
+        <div class="blog-sidebar-widget blog-bor">
+            <h2 class="blog-title"><span>么么哒</span></h2>
+            <ul class="am-list">
+                <li><a href="#">每个人都有一个死角， 自己走不出来，别人也闯不进去。</a></li>
+                <li><a href="#">我把最深沉的秘密放在那里。</a></li>
+                <li><a href="#">你不懂我，我不怪你。</a></li>
+                <li><a href="#">每个人都有一道伤口， 或深或浅，盖上布，以为不存在。</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<footer class="blog-footer" th:remove="all">
+    <div class="am-g am-g-fixed blog-fixed am-u-sm-centered blog-footer-padding">
+        <div class="am-u-sm-12 am-u-md-4- am-u-lg-4">
+            <h3>简介</h3>
+            <p class="am-text-sm">前端基于amazeUI制作。</p>
+        </div>
+        <div class="am-u-sm-12 am-u-md-4- am-u-lg-4">
+            <h3>社交账号</h3>
+            <p>
+                <a href=""><span class="am-icon-qq am-icon-fw am-primary blog-icon blog-icon"></span></a>
+                <a href=""><span class="am-icon-github am-icon-fw blog-icon blog-icon"></span></a>
+                <a href=""><span class="am-icon-weibo am-icon-fw blog-icon blog-icon"></span></a>
+                <a href=""><span class="am-icon-reddit am-icon-fw blog-icon blog-icon"></span></a>
+                <a href=""><span class="am-icon-weixin am-icon-fw blog-icon blog-icon"></span></a>
+            </p>
+        </div>
+        <div class="am-u-sm-12 am-u-md-4- am-u-lg-4">
+            <h1>站在巨人的肩膀上</h1>
+        </div>
+    </div>
+    <div class="blog-text-center">© 2017 龙浩 all right</div>
+</footer>
+<div th:remove="all">
+    <script src="../static/js/jquery.min.js"></script>
+    <!--<![endif]-->
+    <!--[if lte IE 8 ]>
+    <script src="http://libs.baidu.com/jquery/1.11.3/jquery.min.js"></script>
+    <script src="http://cdn.staticfile.org/modernizr/2.8.3/modernizr.js"></script>
+    <script src="../static/js/amazeui.ie8polyfill.min.js"></script>
+    <![endif]-->
+    <script src="../static/js/amazeui.min.js"></script>
+</div>
+
+<div th:replace="thymleaf/header"></div>
+<div class="am-g am-g-fixed blog-fixed">
+    <div th:replace="thymleaf/content-blogpage"></div>
+    <div th:replace="thymleaf/content-right"></div>
+</div>
+<div th:replace="thymleaf/footer"></div>
+<div th:replace="thymleaf/scripts"></div>
+
+</body>
+</html>

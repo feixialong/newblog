@@ -1,0 +1,106 @@
+<div class="am-u-md-8 am-u-sm-12 blog-sidebar">
+    <article class="am-article blog-article-p">
+        <!--标题-->
+        <div class="am-article-hd">
+            <h1 class="am-article-title blog-text-center" th:text="${blog.Title}">标题</h1>
+            <p class="am-article-meta blog-text-center">
+                <span><a th:href="@{/categories/{categoriesName}(categoriesName=${blog.Categories})}" class="blog-color" th:text="${blog.Categories}">article &nbsp;</a></span>-
+                <span><a href="#" th:text="${blog.Date}">2015/10/9</a></span>
+            </p>
+        </div>
+        <!--正文-->
+        <div class="am-article-bd" th:utext="${blog.Article}">
+            <h1>这是标题</h1>
+            <h2>这是标题</h2>
+            <h3>这是标题</h3>
+            <h4>这是标题</h4>
+            <h5>这是标题</h5>
+            <h1>HEADER ONE</h1>
+            <h2>HEADER ONE</h2>
+            <h3>HEADER ONE</h3>
+            <h4>HEADER ONE</h4>
+            <h5>HEADER ONE</h5>
+            <h1>表格:</h1>
+            <table class="am-table am-table-bordered">
+                <thead>
+                <tr>
+                    <th>网站名称</th>
+                    <th>网址</th>
+                    <th>创建时间</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>Amaze UI</td>
+                    <td>http://amazeui.org</td>
+                    <td>2012-10-01</td>
+                </tr>
+                <tr>
+                    <td>Amaze UI</td>
+                    <td>http://amazeui.org</td>
+                    <td>2012-10-01</td>
+                </tr>
+                <tr>
+                    <td>Amaze UI(Active)</td>
+                    <td>http://amazeui.org</td>
+                    <td>2012-10-01</td>
+                </tr>
+                <tr>
+                    <td>Amaze UI</td>
+                    <td>http://amazeui.org</td>
+                    <td>2012-10-01</td>
+                </tr>
+                <tr>
+                    <td>Amaze UI</td>
+                    <td>http://amazeui.org</td>
+                    <td>2012-10-01</td>
+                </tr>
+                </tbody>
+            </table>
+            <hr>
+            <h1>自定义列表:</h1>
+            <ul class="am-list am-list-border">
+                <li><a href="#"><i class="am-icon-home am-icon-fw"></i>
+                    每个人都有一个死角， 自己走不出来，别人也闯不进去。</a></li>
+                <li><a href="#"> <i class="am-icon-book am-icon-fw"></i>
+                    我把最深沉的秘密放在那里。</a></li>
+                <li><a href="#"><i class="am-icon-pencil am-icon-fw"></i>你不懂我，我不怪你。</a></li>
+            </ul>
+            <h1>有序列表:</h1>
+            <ol><li>List item one<ol><li>List item one<ol><li>List item one</li><li>List item two</li><li>List item three</li><li>List item four</li></ol></li><li>List item two</li><li>List item three</li><li>List item four</li></ol></li><li>List item two</li><li>List item three</li><li>List item four</li></ol>
+            <h1>无序列表:</h1>
+            <ul><li>List item one<ul><li>List item one<ul><li>List item one</li><li>List item two</li><li>List item three</li><li>List item four</li></ul></li><li>List item two</li><li>List item three</li><li>List item four</li></ul></li><li>List item two</li><li>List item three</li><li>List item four</li></ul>
+            <h1>一大段文字：</h1>
+            <p>我遇见了你，你一直觉得自己不够美好，充满惊慌与卑微，但是，你即使那样害怕，却守在我的身后，不曾后退。人们总是崇拜英雄，惊喜与他们随时随地的光芒，但是最真实的事情永远是我们都会恐惧都会失败，有时受尽打击，又是无能为力。你说我是英雄，其实我不敢告诉你，如果不是你，你傻傻地倔强地站在那里，我一回头就能看见你，那么，或许，我早就做了命运的逃兵。<br><br>
+                红衣佳人白衣友，朝与同歌暮同酒，世人谓我恋长安，其实只恋长安某。 ——殊同 <br>
+
+                水银泻地的时候，忧愁穿过墙壁，又和着嘶哑的音乐，使我羞惭、灰心。整个夏季，仿佛一场，没有主题的游戏。 ——赵野 <br>
+
+                我感到自己仿佛变得蔚蓝，变得无边无际，眼睛和指尖上，栖息着无数的星辰。 ——马林·索雷斯库 <br>
+
+                手中的书页犹如薄薄的剃刀片白亮亮闪着寒光。在凌晨四时寂寞的时刻里，我可以听到孤独之根正一点点伸长的声音。 ——村上春树 <br>
+
+                你的明眸是映现我灵魂颤动的湖，我那成群结队的梦想，为寻求解脱，而纷纷投入你这秋波深处。 ——波德莱尔  <br>
+
+                当我们只剩下虚无，唯有沉默的太阳够好，是你的静寂，是无声的声音。 ——佩索阿
+            </p>
+        </div>
+        <!--标签-->
+
+
+        <div class="am-g blog-article-widget blog-article-margin">
+            <div class="am-u-lg-4 am-u-md-5 am-u-sm-7 am-u-sm-centered blog-text-center">
+                <span class="am-icon-tags"> &nbsp;</span><span th:each="tag:${#strings.arraySplit(blog.Tags,',')}" ><a th:href="@{/tags/{tag}(tag=${tag})}" th:text="${tag}+'. '">标签</a></span>
+                <hr>
+                <a th:href="${AdminInfo.Qq}"><span class="am-icon-qq am-icon-fw am-primary blog-icon"></span></a>
+                <a th:href="${AdminInfo.Weixin}"><span class="am-icon-wechat am-icon-fw blog-icon"></span></a>
+                <a th:href="${AdminInfo.Weibo}"><span class="am-icon-weibo am-icon-fw blog-icon"></span></a>
+            </div>
+        </div>
+    </article>
+    <hr>
+    <ul class="am-pagination blog-article-margin">
+        <li class="am-pagination-prev"><a href="#" class="">&laquo; 一切的回顾</a></li>
+        <li class="am-pagination-next"><a href="">不远的未来 &raquo;</a></li>
+    </ul>
+</div>
